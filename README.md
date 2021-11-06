@@ -1,0 +1,2 @@
+# SuperScheduler_POM
+AppiumTest
