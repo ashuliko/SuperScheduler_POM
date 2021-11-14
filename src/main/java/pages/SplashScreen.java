@@ -11,12 +11,15 @@ public class SplashScreen extends BaseScreen {
         super(driver);
     }
 
-    @FindBy(how = How.XPATH, using =
-     "//*[@resource-id='com.example.svetlana.scheduler:id/app_version_res']") MobileElement versionTextView;
+    @FindBy (how=How.XPATH, using="//*[@resource-id='com.example.svetlana.scheduler:id/app_version_res']") MobileElement versionTextView;
 
-    public String getCurrentVersion(){
-        return versionTextView.getText();
+    public String getCurrentVersion() {
+        return versionTextView.getText(); }
 
-        }
+    public LoginScreen checkVersion(String version){
+        shouldHave(versionTextView,version,15);
+        return new LoginScreen(driver);
+    }
+
 
     }
